@@ -7,22 +7,28 @@
 <body ng-app="Mapquiz">
   <div ng-controller="MapquizController">
     <h1>US States Quiz</h1>
+    <div class="quiz">
+      <div class="controllers">
+        <button ng-if="!start" ng-click="startButton()">{{ buttonText }}</button>
+        <button ng-if="start" ng-click="stopButton()">Give up</button>
 
-    <p ng-if="start">
-      Time remaining: {{ timeRemaining | secondsToDateTime | date:'mm:ss' }}
-    </p>
-    <p ng-if="start">
-      {{ statesFound.length }} / 50 states
-    </p>
+        <input type="text" ng-model="userInput" ng-disabled="!start" id="userInput" focus-if="start">
 
-    <button ng-if="!start" ng-click="startButton()">{{ buttonText }}</button>
-    <button ng-if="start" ng-click="stopButton()">Give up</button>
+        <p ng-if="start">
+          Time remaining: {{ timeRemaining | secondsToDateTime | date:'mm:ss' }}
+        </p>
 
-    <input type="text" ng-model="userInput" ng-disabled="!start" id="userInput" focus-if="start">
+        <p ng-if="start">
+          {{ statesFound.length }} / 50 states found
+        </p>
+      </div>
 
-    <object id="us-map" data="usmap.svg" type="image/svg+xml"></object>
-    <!-- map from here https://commons.wikimedia.org/wiki/File:Map_of_USA_with_state_names.svg -->
-
+      <div class="object">
+        <object id="us-map" data="usmap.svg" type="image/svg+xml"></object>
+        <!-- map from here https://commons.wikimedia.org/wiki/File:Map_of_USA_with_state_names.svg -->
+      </div>
+    </div>
+    
     <script src="angular.min.js"></script>
     <script src="focusIf.min.js"></script>
     <script src="mapquiz.js"></script>

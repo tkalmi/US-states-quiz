@@ -1,5 +1,28 @@
-object {
-  width: 90vw;
+h1 {
+  text-align: center;
+}
+p {
+  display: inline;
+  margin-left: 20px;
+}
+.quiz {
+  margin: auto;
   max-width: 1000px;
+}
+.controllers {
+  margin-left: 10px;
+}
+object {
+  max-width: 980px;
   clear: left;
+  margin: 10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border: 5px solid #424242;
+}
+@media screen and (max-width: 980px) {
+  object {
+    max-width: 95vw;
+  }
 }
