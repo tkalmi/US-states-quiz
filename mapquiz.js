@@ -1,4 +1,4 @@
-var Mapquiz = angular.module('Mapquiz', []);
+var Mapquiz = angular.module('Mapquiz', ['focus-if']);
 
 Mapquiz.filter('secondsToDateTime', [function() {
     return function(seconds) {
@@ -36,8 +36,7 @@ Mapquiz.controller('MapquizController', function($scope, $interval) {
   function init() {
     var keys = Object.keys(states);
     for (var i = 0; i < keys.length; i++) {
-      var txt = document.getElementById("us-map").getSVGDocument();
-      var xd = txt.getElementById(states[keys[i]][0]);
+      var txt = document.getElementById("us-map").getSVGDocument().getElementById(states[keys[i]][0]);
       document.getElementById("us-map").getSVGDocument().getElementById(states[keys[i]][1]).setAttribute('style','fill:#ffffff');
       txt.textContent = "";
     }
@@ -50,7 +49,6 @@ Mapquiz.controller('MapquizController', function($scope, $interval) {
     $scope.start = true;
     $scope.timeRemaining = 600;
     $scope.userInput = "";
-    document.getElementById("userInput").focus();
     $scope.statesFound = [];
     init();
   };
