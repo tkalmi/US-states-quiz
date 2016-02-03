@@ -66,7 +66,7 @@ Mapquiz.controller('MapquizController', function($scope, $interval) {
           document.getElementById("us-map").getSVGDocument().getElementById("path3106").setAttribute('style','fill:#ff0000');
       }
     }
-    alert("Quitter!\nYou got right " + $scope.statesFound.length + " out 50 states in " + Math.floor((600 - $scope.timeRemaining) / 60) + " minutes and " + (600 - $scope.timeRemaining) % 60 + " seconds.");
+    alert("Quitter!\nYou got right " + $scope.statesFound.length + " out of 50 states in " + Math.floor((600 - $scope.timeRemaining) / 60) + " minutes and " + (600 - $scope.timeRemaining) % 60 + " seconds.");
   };
 
 
@@ -84,7 +84,7 @@ Mapquiz.controller('MapquizController', function($scope, $interval) {
             document.getElementById("us-map").getSVGDocument().getElementById("path3106").setAttribute('style','fill:#ff0000');
         }
       }
-      alert("Time's up!\nYou got right " + $scope.statesFound.length + " out 50 states in " + Math.floor((600 - $scope.timeRemaining) / 60) + " minutes and " + (600 - $scope.timeRemaining) % 60 + " seconds.");
+      alert("Time's up!\nYou got right " + $scope.statesFound.length + " out of 50 states in " + Math.floor((600 - $scope.timeRemaining) / 60) + " minutes and " + (600 - $scope.timeRemaining) % 60 + " seconds.");
     }
   });
 
